@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --mainColor : #718FDD;
+}
+a{
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "rBold";
+    src: url("./assets/fonts/Raleway-Bold.woff");
+}
+@font-face {
+    font-family: "rRegular";
+    src: url("./assets/fonts/Raleway-Regular.woff");
+}
+@font-face {
+    font-family: "rMedium";
+    src: url("./assets/fonts/Raleway-Medium.woff");
+}
+p{
+    font-family: "rRegular";
+}
+a{
+    font-family: "rRegular";
+}
+

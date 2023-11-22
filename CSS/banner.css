@@ -1,0 +1,7 @@
+.banner{
+    padding :4%;
+    display: flex;
+    margin-top: max(90px,5.2vw) ;
+    align-items: center;
+   
+}
