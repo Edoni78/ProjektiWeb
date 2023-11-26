@@ -1,0 +1,19 @@
+
+.flexbox{
+    padding: 4%;
+    display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: space-between;
+}
+.img{
+    width: 370px;
+    height: 300px;
+}
+.under-text{
+    display: block;
+    justify-content: space-between;
+}
+.cover{
+   
+}

@@ -1,0 +1,21 @@
+.second-banner{
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.typewriter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+}
+
+.typewriter-text {
+    border-right: 1px solid #000; 
+    padding-right: 10px; 
+    font-size: 18px; 
+}
+.fix{
+    display: block;
+}

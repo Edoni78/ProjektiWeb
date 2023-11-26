@@ -3,5 +3,19 @@
     display: flex;
     margin-top: max(90px,5.2vw) ;
     align-items: center;
-   
+   justify-content: center;
+}
+.title{
+    
+}
+.img {
+    width: 700px;
+    height: 100%;
+    bottom: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

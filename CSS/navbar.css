@@ -13,11 +13,11 @@
 }
 
 .logo{
-    content: url("../assets/images/logo.svg");
-    width: max(70px,5vw);
-    height: max(70px,5vw);
-}
-
+    content: url("../assets/images/Meta\ logo.jpg");
+    width: max(150px,5vw);                             
+    height: max(70px,4vw);                               
+} 
+/* 70px   5vw */
 .nav-links{
     display: flex;
     gap: max(20px,4vw);
