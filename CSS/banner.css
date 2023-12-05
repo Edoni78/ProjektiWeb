@@ -10,10 +10,25 @@
 .title{
     font-size: max(30px,2.5vw);
 }
-.img {
-    width: 700px;
-    height: 100%;
-    bottom: 20px;
+.image-container{
+    width: 60%;
+    height: auto;
+}
+.image-container img{
+    width: 100%;
+}
+.image-container{
+    display: flex;
+    flex-direction: column;
+    gap: max(30px,2vw);
+}
+.fa-arrow-right{
+    cursor: pointer;
+    font-size: max(20px,1.5vw);
+    filter: invert(1);
+}
+.typewriter-container p{
+    text-align: center;
 }
 
 .image-container {

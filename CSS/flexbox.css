@@ -7,22 +7,13 @@
     justify-content: space-between;
 }
 .img{
-    width: fit-content;
-    height: 70%;
+    width: 370px;
+    height: 300px;
 }
 .under-text{
     display: block;
     justify-content: space-between;
 }
 .cover{
-   /* margin-left: 6%; */
+   
 }
-.paragraph{
-    margin-left: 4%;
-}
-@media screen and (max-width: 768px) {
-    .img {
-      width: 100%; 
-      margin-bottom: 4%; 
-    }
-  }

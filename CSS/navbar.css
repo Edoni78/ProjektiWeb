@@ -14,12 +14,7 @@
 
 .logo{
     content: url("../assets/images/Meta\ logo.jpg");
-<<<<<<< HEAD
     width: max(150px,5vw);                             
-=======
-    /* width: max(150px,5vw);                             
-    height: max(70px,4vw);                                */
->>>>>>> 415fb2d1e4b8436b2ecba1ae0ad29ce11b336cc6
 } 
 /* 70px   5vw */
 .nav-links{
