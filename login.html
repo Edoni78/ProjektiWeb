@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <form action="" class="login" onsubmit= "return validateForm()" >
+
+                <div class="registerHeadinf">
+                    <h1>LOGIN</h1>
+                </div>
+    
+                <div class="inputName input">
+                    <p for="">Name :</p>
+                    <input type="text" id="name" required>
+                </div>
+               
+               <div class="inputSurname input">
+                    <p for="">Surname :</p>
+                    <input type="text" id="surname">
+               </div>
+    
+               <div class="inputPassword input">
+                <p for="">Password:</p>
+                <input type="password" id="password">
+               </div>  
+               <div class="buttonSubmit">
+                <button onclick="validateForm()">Submit</button>
+            </div>
+    
+        </form>
+       
+
+    </div>
+       
+
+    <script src="./JavaScript/loginValidate.js"></script>
+</body>
+</html>
