@@ -51,6 +51,9 @@
     align-items: center;
     cursor: pointer;
 }
+.signIn{
+    color: #000;
+}
 
 .register{
     background-color: var(--mainColor);
