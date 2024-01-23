@@ -1,0 +1,163 @@
+.ourmission{
+    padding: 5%;
+}
+.ourmission h5{
+
+    text-align: center;
+    font-family: "rMedium";
+}
+.ourmission h1{
+    padding: 1%;
+    text-align: center;
+    font-family: "rMedium";
+}
+.ourmissionImg{
+    
+    width: 370;
+    height: 200; 
+}
+
+.center-container {
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.center-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.secondtext{
+    padding: 4%;
+    display: flex;
+    gap: max(40px,1.5vw);
+    align-items: center;
+    flex-direction: column;
+}
+
+.secondtext-leftSide p{
+    font-family: "rMedium";
+    font-size: max(30px,2.5vw);
+}
+.secondtext-leftSide {
+    width: 50%;
+}
+.secondtext-down{
+    display: flex;
+    align-items: center;
+    gap: max(20px,2vw);
+}
+.secondtext-rightSide{
+    width: 50%;
+}
+.secondtext-heading h1{
+    font-size: max(30px,2.5vw);
+}
+
+.buttonNext{
+    padding: 3%;
+    background-color: lightblue;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    height: max(30px,2vw);
+    width: max(30px,2vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondtextImg{
+    content: url("../assets/images/Principles.jpg");
+    width: 60%;
+}
+
+.secondtextImgHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:920px) {
+    .secondtext-down{
+        flex-direction: column;
+    }
+
+    .secondtext-leftSide p{
+        text-align: center;
+    }
+
+    .secondtext-leftSide {
+      width: 100%;
+    }
+
+    .secondtext-rightSide{
+        width: 100%;
+    }
+
+}
+
+
+
+.leadership{
+    padding: 4%;
+    display: flex;
+    gap: max(40px,3vw);
+    align-items: center;
+    flex-direction: column;
+}
+
+.leadershipImg{
+    content: url("../assets/images/leadership.jpg");
+    width: 70%;
+}
+.leadershipUp h1{
+    font-size: max(30px,2.5vw);
+}
+.leadershipDown{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: max(20px,2vw);
+}
+
+.leadership-leftside{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.leadership-rightside{
+    width: 50%;
+}
+
+.leadership-rightside p{
+    font-family: "rRegular";
+    font-size: max(30px,2.5vw);
+}
+
+@media screen and (max-width:840px) {
+    .leadershipDown{
+        flex-direction: column-reverse;
+    }
+
+    .leadership-rightside{
+        width: 100%;
+    }
+
+    .leadership-leftside{
+        width: 100%;
+    }
+
+    .leadership-rightside p{
+       text-align: center;
+    }
+
+    .leadershipImgHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}

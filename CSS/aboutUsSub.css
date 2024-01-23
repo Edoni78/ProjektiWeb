@@ -1,0 +1,26 @@
+.aboutUsSub{
+    background-image: url("../assets/images/aboutUS.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: max(700px,43.4vw);
+    background-position: center;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: max(80px,5vw);
+  
+}
+.aboutUs-sub-conatiner{
+    width: 70%; 
+    display: flex;
+    flex-direction: column;
+    gap: max(10px,1vw);
+    align-items: center;
+    justify-content: center;
+}
+.aboutUs-sub-conatiner h1{
+   color: #ffffff;
+   text-align: center;
+}
