@@ -1,12 +1,10 @@
 <?php
-// session_start();
+session_start();
 
-// if (!isset($_SESSION['name'])) {
-//     header("location: login.php");
-//     exit(); // Add exit to stop script execution after redirection
-// }
-
-// $hide = ($_SESSION['role'] == "user") ? "hide" : "";
+if (!isset($_SESSION['name'])) {
+    header("location: login.php");
+    exit(); // Add exit to stop script execution after redirection
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +39,7 @@
     <!-- KTU FILLON NAVBARI-->
     <div class="navbar">
         <div class="logoHolder">
-            <a class="logo" href="index.php"></a>
+            <a class="logo" href="adminHome.php"></a>
         </div>
 
         <div class="nav-links">
@@ -49,11 +47,12 @@
             <a href="howitworks.php">How it Works</a>
             <a href="products.php">Products</a>
             <a href="aboutUs.php">About Us</a>
+            <a href="aboutUs.php">Dashboard</a>
         </div>
 
         <div class="nav-auth">
-            <a class="signIn" href="login.php">Log In</a>
-            <a class="register" href="resgister.php">Register</a>
+            <h3 class="hrOfUser"><?php echo " Admin: ".$_SESSION['name']."<br>" ?></h3>
+            <a class="register"  href="logout.php">Log out</a>
         </div>
 
         <div  class="hamburger-menu">

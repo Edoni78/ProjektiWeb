@@ -1,3 +1,47 @@
+<?php
+if (isset($_POST['loginbtn'])) {
+    if (empty($_POST['name']) || empty($_POST['surname']) || empty($_POST['password'])) {
+        echo "Please fill the required fields!";
+    } else {
+        // Validate
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $password = $_POST['password'];
+
+        include_once 'users.php';
+        $i = 0;
+
+        foreach ($users as $user) {
+            if ($user['name'] == $name && $user['surname'] == $surname && $user['password'] == $password) {
+                session_start();
+
+                $_SESSION['name'] = $name;
+                $_SESSION['surname'] = $surname;
+                $_SESSION['password'] = $password;
+                $_SESSION['role'] = $user['role'];
+                $_SESSION['loginTime'] = date("H:i:s");
+
+                if ($_SESSION['role'] == "admin") {
+                    header("location: adminHome.php");
+                } else {
+                    header("location: userHome.php");
+                }
+
+             
+                exit();
+            } else {
+                $i++;
+                if ($i == count($users)) {
+                    echo "Incorrect Name, Surname, or Password!";
+                    exit();
+                }
+            }
+        }
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +63,7 @@
 <body>
     <div class="navbar">
         <div class="logoHolder">
-            <a class="logo" href="index.html"></a>
+            <a class="logo" href="index.php"></a>
         </div>
 
         <div class="nav-links">
@@ -45,7 +89,7 @@
 
     <div class="container">
 
-        <form action="" class="login" onsubmit= "return validateForm()" >
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" class="login" onsubmit= "return validateForm()" >
 
                 <div class="loginHeadinf">
                     <h1>LOGIN</h1>
@@ -53,20 +97,20 @@
     
                 <div class="inputName input">
                     <p for="">Name :</p>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" required name="name">
                 </div>
                
                <div class="inputSurname input">
                     <p for="">Surname :</p>
-                    <input type="text" id="surname">
+                    <input type="text" id="surname" name="surname">
                </div>
     
                <div class="inputPassword input">
                 <p for="">Password:</p>
-                <input type="password" id="password">
+                <input type="password" id="password" name="password">
                </div>  
                <div class="buttonSubmit">
-                <button onclick="validateForm()">Submit</button>
+                <button onclick="validateForm()" name="loginbtn">Submit</button>
             </div>
     
         </form>

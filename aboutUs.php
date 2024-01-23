@@ -21,7 +21,7 @@
 <body>
     <div class="navbar">
         <div class="logoHolder">
-            <a class="logo" href="index.html"></a>
+            <a class="logo" href="index.php"></a>
         </div>
 
         <div class="nav-links">

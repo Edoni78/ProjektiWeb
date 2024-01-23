@@ -1,3 +1,59 @@
+<?php
+  // Check if the registration form is submitted
+  if(isset($_POST['registerbtn'])){
+    
+    // Validate form fields
+    if(empty($_POST['name']) || empty($_POST['surname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirmPassword'])){
+      echo "Please fill in all the required fields!";
+    } else {
+      // Retrieve user input
+      $name = $_POST['name'];
+      $surname = $_POST['surname'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $confirmPassword = $_POST['confirmPassword'];
+
+      // Validate password match
+      if($password != $confirmPassword) {
+        echo "Passwords do not match!";
+        exit();
+      }
+
+      // TODO: Add additional validation for email format, password strength, etc.
+
+      // Include users.php file
+      include_once 'users.php';
+
+      // Check if the email is already registered
+      foreach($users as $user){
+        if($user['email'] == $email){
+          echo "This email is already registered!";
+          exit();
+        }
+      }
+
+      // Add the new user to the $users array
+      $newUser = [
+        'name' => $name,
+        'surname' => $surname,
+        'email' => $email,
+        'password' => $password,
+        'role' => 'user' // Set a default role for the new user
+      ];
+
+      $users[] = $newUser;
+
+      // Save the updated $users array to the 'users.php' file
+      file_put_contents('users.php', '<?php $users = ' . var_export($users, true) . ';');
+
+      echo "Registration successful! You can now log in.";
+
+      header("location:login.php");
+    }
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +75,7 @@
 <body>
     <div class="navbar">
         <div class="logoHolder">
-            <a class="logo" href="index.html"></a>
+            <a class="logo" href="index.php"></a>
         </div>
 
         <div class="nav-links">
@@ -44,7 +100,7 @@
     </div>
     <div class="container">
 
-        <form action="" class="registerP" onsubmit= "return validateForm()" >
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" class="registerP" onsubmit= "return validateForm()" >
 
                 <div class="registerHeadinf">
                     <h1>REGISTER</h1>
@@ -52,31 +108,31 @@
     
                 <div class="inputName input">
                     <p for="">Name :</p>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" required name="name">
                 </div>
                
                <div class="inputSurname input">
                     <p for="">Surname :</p>
-                    <input type="text" id="surname">
+                    <input type="text" id="surname" name="surname">
                </div>
     
                <div class="inputEmail input">
                 <p for="">Email:</p>
-                <input type="email" id="email" required>
+                <input type="email" id="email" required name="email">
                </div>
     
                <div class="inputPassword input">
                 <p for="">Password:</p>
-                <input type="password" id="password">
+                <input type="password" id="password" name="password">
                </div>
     
                <div class="inputConfirmPassword input">
                 <p for="">Confirm Password:</p>
-                <input type="password" id="confirmPassowrd">
+                <input type="password" id="confirmPassowrd" name="confirmPassword">
                </div>
     
                <div class="buttonSubmit">
-                <button onclick="validateForm()">Submit</button>
+                <button name="registerbtn" onclick="validateForm()">Submit</button>
             </div>
     
         </form>

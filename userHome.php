@@ -1,12 +1,10 @@
 <?php
-// session_start();
+session_start();
 
-// if (!isset($_SESSION['name'])) {
-//     header("location: login.php");
-//     exit(); // Add exit to stop script execution after redirection
-// }
-
-// $hide = ($_SESSION['role'] == "user") ? "hide" : "";
+if (!isset($_SESSION['name'])) {
+    header("location: login.php");
+    exit(); // Add exit to stop script execution after redirection
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +25,6 @@
     <link rel="stylesheet" href="./CSS/products.css">
     <link rel="stylesheet" href="./CSS/footer.css">
     <style>
-
         .nav-auth{
             align-items: center;
         }
@@ -52,8 +49,8 @@
         </div>
 
         <div class="nav-auth">
-            <a class="signIn" href="login.php">Log In</a>
-            <a class="register" href="resgister.php">Register</a>
+            <h3 class="hrOfUser"><?php echo "Username: ".$_SESSION['name']."<br>" ?></h3>
+            <a class="register <?php echo $hide?>" href="logout.php">Log out</a>
         </div>
 
         <div  class="hamburger-menu">
