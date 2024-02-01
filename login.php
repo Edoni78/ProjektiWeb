@@ -1,45 +1,55 @@
 <?php
-if (isset($_POST['loginbtn'])) {
-    if (empty($_POST['name']) || empty($_POST['surname']) || empty($_POST['password'])) {
-        echo "Please fill the required fields!";
-    } else {
-        // Validate
-        $name = $_POST['name'];
-        $surname = $_POST['surname'];
-        $password = $_POST['password'];
+session_start();
+require_once 'databaseConnection.php';
+require_once 'loginConfig.php'; // Assuming your class file is named loginConfig.php
 
-        include_once 'users.php';
-        $i = 0;
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $password = $_POST['password'];
 
-        foreach ($users as $user) {
-            if ($user['name'] == $name && $user['surname'] == $surname && $user['password'] == $password) {
-                session_start();
+    // Instantiate DatabaseConnection
+    $dbConnection = new DatabaseConnection();
+    $conn = $dbConnection->startConnection();
 
-                $_SESSION['name'] = $name;
-                $_SESSION['surname'] = $surname;
-                $_SESSION['password'] = $password;
-                $_SESSION['role'] = $user['role'];
-                $_SESSION['loginTime'] = date("H:i:s");
+    // Instantiate loginConfig
+    $loginConfig = new loginConfig($name, $surname, $password);
 
-                if ($_SESSION['role'] == "admin") {
-                    header("location: adminHome.php");
-                } else {
-                    header("location: userHome.php");
-                }
+    // Fetch all users
+    $users = $loginConfig->fetchAll($conn);
 
-             
-                exit();
-            } else {
-                $i++;
-                if ($i == count($users)) {
-                    echo "Incorrect Name, Surname, or Password!";
-                    exit();
-                }
-            }
+    // Check user credentials
+    $authenticated = false;
+foreach ($users as $user) {
+    if ($user->getName() === $name && $user->getSurname() === $surname && password_verify($password, $user->getPassword())) {
+        $authenticated = true;
+        break;
+    }
+}
+
+
+    // Handle authentication result
+    if ($authenticated) {
+        $_SESSION['name'] = $name;
+        $_SESSION['surname'] = $surname;
+        $_SESSION['role'] = $user['role']; // Assuming the role is retrieved in the fetchAll method
+        if ($_SESSION['role'] == "admin") {
+            header("location: adminHome.php");
+            exit();
+        } else {
+            header("location: userHome.php");
+            exit();
         }
+    } else {
+        echo "Incorrect Name, Surname, or Password!";
     }
 }
 ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -110,7 +120,7 @@ if (isset($_POST['loginbtn'])) {
                 <input type="password" id="password" name="password">
                </div>  
                <div class="buttonSubmit">
-                <button onclick="validateForm()" name="loginbtn">Submit</button>
+                <button name="loginbtn" onclick="validateForm()">Submit</button>
             </div>
     
         </form>

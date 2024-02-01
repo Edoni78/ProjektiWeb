@@ -1,58 +1,30 @@
-<?php
-  // Check if the registration form is submitted
-  if(isset($_POST['registerbtn'])){
-    
-    // Validate form fields
-    if(empty($_POST['name']) || empty($_POST['surname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirmPassword'])){
-      echo "Please fill in all the required fields!";
-    } else {
-      // Retrieve user input
-      $name = $_POST['name'];
-      $surname = $_POST['surname'];
-      $email = $_POST['email'];
-      $password = $_POST['password'];
-      $confirmPassword = $_POST['confirmPassword'];
+<?php 
+ include_once 'userRepository.php';
+ include_once 'user.php';
+ 
+ if (isset($_POST['registerbtn'])) {
+     if (empty($_POST['name']) || empty($_POST['surname']) || empty($_POST['email']) ||
+         empty($_POST['password'])) {
+         echo "Fill all fields!";
+     } else {
+         $name = $_POST['name'];
+         $surname = $_POST['surname'];
+         $email = $_POST['email'];
+         $password = $_POST['password'];
+         $id = $name . rand(100, 999);
+ 
+         $user = new User($id, $name, $surname, $email, $password);
+         $userRepository = new UserRepository();
+ 
+         $userRepository->insertUser($user);
 
-      // Validate password match
-      if($password != $confirmPassword) {
-        echo "Passwords do not match!";
-        exit();
-      }
+         header("Location: login.php");
+         exit();
+     }
+ }
 
-      // TODO: Add additional validation for email format, password strength, etc.
-
-      // Include users.php file
-      include_once 'users.php';
-
-      // Check if the email is already registered
-      foreach($users as $user){
-        if($user['email'] == $email){
-          echo "This email is already registered!";
-          exit();
-        }
-      }
-
-      // Add the new user to the $users array
-      $newUser = [
-        'name' => $name,
-        'surname' => $surname,
-        'email' => $email,
-        'password' => $password,
-        'role' => 'user' // Set a default role for the new user
-      ];
-
-      $users[] = $newUser;
-
-      // Save the updated $users array to the 'users.php' file
-      file_put_contents('users.php', '<?php $users = ' . var_export($users, true) . ';');
-
-      echo "Registration successful! You can now log in.";
-
-      header("location:login.php");
-    }
-  }
+ 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -107,27 +79,27 @@
                 </div>
     
                 <div class="inputName input">
-                    <p for="">Name :</p>
+                    <p for="name">Name :</p>
                     <input type="text" id="name" required name="name">
                 </div>
                
                <div class="inputSurname input">
-                    <p for="">Surname :</p>
+                    <p for="surname">Surname :</p>
                     <input type="text" id="surname" name="surname">
                </div>
     
                <div class="inputEmail input">
-                <p for="">Email:</p>
+                <p for="email">Email:</p>
                 <input type="email" id="email" required name="email">
                </div>
     
                <div class="inputPassword input">
-                <p for="">Password:</p>
+                <p for="password">Password:</p>
                 <input type="password" id="password" name="password">
                </div>
     
                <div class="inputConfirmPassword input">
-                <p for="">Confirm Password:</p>
+                <p for="confirmPassword">Confirm Password:</p>
                 <input type="password" id="confirmPassowrd" name="confirmPassword">
                </div>
     
@@ -142,5 +114,6 @@
        
 
     <script src="./JavaScript/registerValidate.js"></script>
+    <?php include_once 'registercontroller.php';?>
 </body>
 </html>
