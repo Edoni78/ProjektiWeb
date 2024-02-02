@@ -1,16 +1,15 @@
 <?php
 session_start();
 
-// if(isset($_SESSION['name']))
-
-// if (!isset($_SESSION['name'])) {
-//     header("location: login.php");
-//     exit(); // Add exit to stop script execution after redirection
-// }
+if (!isset($_SESSION['name'])) {
+    header("location: login.php");
+    exit(); // Add exit to stop script execution after redirection
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,15 +26,16 @@ session_start();
     <link rel="stylesheet" href="./CSS/products.css">
     <link rel="stylesheet" href="./CSS/footer.css">
     <style>
-
-        .nav-auth{
+        .nav-auth {
             align-items: center;
         }
-        .hrOfUser{
-            font:max(15px,1vw) "rRegular";
+
+        .hrOfUser {
+            font: max(15px, 1vw) "rRegular";
         }
     </style>
 </head>
+
 <body>
 
     <!-- KTU FILLON NAVBARI-->
@@ -45,19 +45,19 @@ session_start();
         </div>
 
         <div class="nav-links">
-            <a href="index.php">Home</a>
-            <a href="howitworks.php">How it Works</a>
-            <a href="products.php">Products</a>
-            <a href="aboutUs.php">About Us</a>
+            <a href="#">Home</a>
+            <a href="adminHowitworks.php">How it Works</a>
+            <a href="adminProducts.php">Products</a>
+            <a href="adminAboutUs.php">About Us</a>
             <a href="aboutUs.php">Dashboard</a>
         </div>
 
         <div class="nav-auth">
-            <h3 class="hrOfUser"><?php echo " Admin: ".$_SESSION['name']."<br>" ?></h3>
-            <a class="register"  href="logout.php">Log out</a>
+            <h3 class="hrOfUser"><?php echo " Admin: " . $_SESSION['name'] . "<br>" ?></h3>
+            <a class="register" href="logout.php">Log out</a>
         </div>
 
-        <div  class="hamburger-menu">
+        <div class="hamburger-menu">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -133,9 +133,9 @@ session_start();
                     <i class="fa-solid fa-code"></i>
                 </div>
                 <div class="card-text">
-                    <p>
-                        <?php echo "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ea deleniti eius quos tempora corrupti ullam, reiciendis quibusdam et accusantium."; ?>
-                    </p>
+                    <p>Behind metaverse is a team of passionate individuals with diverse backgrounds in virtual reality,
+                        gaming, and technology. Our experts bring a wealth of experience in creating groundbreaking digital
+                        experiences, ensuring that every aspect of our metaverse is crafted with precision and creativity.</p>
                 </div>
             </div>
 
@@ -144,9 +144,10 @@ session_start();
                     <i class="fa-solid fa-gears"></i>
                 </div>
                 <div class="card-text">
-                    <p>
-                        <?php echo "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ea deleniti eius quos tempora corrupti ullam."; ?>
-                    </p>
+                    <p>Explore a world of endless possibilities with metaverse. From cutting-edge virtual
+                        environments to interactive experiences, our metaverse offers a range of unique
+                        features designed to captivate and engage users. Immerse yourself in a digital
+                        realm where creativity knows no bounds.</p>
                 </div>
             </div>
 
@@ -155,9 +156,11 @@ session_start();
                     <i class="fa-solid fa-microchip"></i>
                 </div>
                 <div class="card-text">
-                    <p>
-                        <?php echo "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ea deleniti eius quos tempora corrupti ullam, reiciendis quibusdam."; ?>
-                    </p>
+                <p>We believe in the power of collaboration to unlock new dimensions
+                     within the metaverse. Metaverse proudly engages in strategic partnerships
+                      with industry leaders, content creators, and technology innovators.
+                       These collaborations enrich our platform, providing users with a
+                        kaleidoscope of experiences and opportunities.</p>
                 </div>
             </div>
 
@@ -166,9 +169,10 @@ session_start();
                     <i class="fa-solid fa-code-branch"></i>
                 </div>
                 <div class="card-text">
-                    <p>
-                        <?php echo "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ea deleniti eius quos."; ?>
-                    </p>
+                <p>The future of metaverse holds boundless possibilities. As we continue to innovate
+                     and explore new horizons, we invite you to be a part of our journey.
+                      Join us in shaping the future of the metaverse, where imagination knows no
+                       limits, and together, we'll redefine the digital landscape for generations to come.</p>
                 </div>
             </div>
         </div>
@@ -191,42 +195,42 @@ session_start();
         <div class="footer-links">
             <div class="footerLink">
                 <p class="footerLink-title">What is Metaverse?</p>
-                <a href=""><?php echo "Lorem ipsum dolor"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum."; ?></a>
-                <a href=""><?php echo "lorem"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum"; ?></a>
+                <a href="">Virtual Reality (VR)</a>
+                <a href="">Augmented Reality (AR)</a>
+                <a href="">Digital World</a>
+                <a href="">Community</a>
             </div>
 
             <div class="footerLink">
                 <p class="footerLink-title">Blog</p>
-                <a href=""><?php echo "Lorem ipsum dolor"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum."; ?></a>
-                <a href=""><?php echo "lorem"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum"; ?></a>
+                <a href="">Metaverse</a>
+                <a href="">How it Works</a>
+                <a href="">Latest News</a>
+                <a href="">Our Blog</a>
             </div>
 
             <div class="footerLink">
                 <p class="footerLink-title">About Us</p>
-                <a href=""><?php echo "Lorem ipsum dolor"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum."; ?></a>
-                <a href=""><?php echo "lorem"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum"; ?></a>
+                <a href="">Products</a>
+                <a href="">Who We Are</a>
+                <a href="">Our Story</a>
+                <a href="">The Metaverse Journey</a>
             </div>
 
             <div class="footerLink">
                 <p class="footerLink-title">Support</p>
-                <a href=""><?php echo "Lorem ipsum dolor"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum."; ?></a>
-                <a href=""><?php echo "lorem"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum"; ?></a>
+                <a href="">Get Help</a>
+                <a href="">Customer Support</a>
+                <a href="">Assistance Center</a>
+                <a href="">Reach Out to Our Support Team</a>
             </div>
 
             <div class="footerLink">
                 <p class="footerLink-title">Get In touch</p>
-                <a href=""><?php echo "Lorem ipsum dolor"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum."; ?></a>
-                <a href=""><?php echo "lorem"; ?></a>
-                <a href=""><?php echo "Lorem, ipsum"; ?></a>
+                <a href="">Get in Touch with Us</a>
+                <a href="">Contact Us</a>
+                <a href="">Reach Out to Us</a>
+                <a href="">How to Contact Us</a>
             </div>
         </div>
     </div>
@@ -249,4 +253,5 @@ session_start();
         document.addEventListener(onload, changeImg());
     </script>
 </body>
+
 </html>
