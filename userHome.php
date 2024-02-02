@@ -1,4 +1,6 @@
 <?php
+include "db_conn.php";
+include "databaseConnection.php";
 session_start();
 
 if (!isset($_SESSION['name'])) {

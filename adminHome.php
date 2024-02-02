@@ -1,10 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['name'])) {
-    header("location: login.php");
-    exit(); // Add exit to stop script execution after redirection
-}
+// if(isset($_SESSION['name']))
+
+// if (!isset($_SESSION['name'])) {
+//     header("location: login.php");
+//     exit(); // Add exit to stop script execution after redirection
+// }
 ?>
 
 <!DOCTYPE html>

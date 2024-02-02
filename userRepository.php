@@ -51,15 +51,6 @@ class UserRepository {
         return $user;
     }
 
-    function getUserByName($name, $surname, $password) {
-        $conn = $this->connection;
-
-        $sql = "SELECT * FROM accounts WHERE name = ? AND surname = ? AND password = ?";
-        $statement = $conn->prepare($sql);
-        $statement->execute([$name, $surname, $password]);
-        $user = $statement->fetch(PDO::FETCH_ASSOC);
-    }
-
     function updateUser($id,$name,$surname,$email,$password){
         $conn = $this->connection;
 
@@ -83,5 +74,15 @@ class UserRepository {
 
     echo "<script>alert('delete was successful'); </script>";
 } 
+function getUserByName($name, $surname, $password) {
+    $conn = $this->connection;
+
+    $sql = "SELECT * FROM accounts WHERE name = ? AND surname = ? AND password = ?";
+    $statement = $conn->prepare($sql);
+    $statement->execute([$name, $surname, $password]);
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+    return $user;
+}
 }
 ?>
