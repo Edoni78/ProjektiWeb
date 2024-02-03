@@ -54,6 +54,7 @@ $user  = $userRepository->getUserById($userId);
             <a href="adminHowitworks.php">How it Works</a>
             <a href="adminProducts.php">Products</a>
             <a href="adminAboutUs.php">About Us</a>
+            <a href="adminSuportUs.php">Support Us</a>
         </div>
 
         <div class="nav-auth">

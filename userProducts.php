@@ -39,6 +39,7 @@ session_start();
             <a href="userHowitworks.php">How it Works</a>
             <a href="#">Products</a>
             <a href="userAboutUs.php">About Us</a>
+            <a href="userSuportUs.php">Support Us</a>
         </div>
 
         <div class="nav-auth">

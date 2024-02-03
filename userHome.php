@@ -46,6 +46,7 @@ if (!isset($_SESSION['name'])) {
             <a href="userHowitworks.php">How it Works</a>
             <a href="userProducts.php">Products</a>
             <a href="userAboutUs.php">About Us</a>
+            <a href="userSuportUs.php">Support Us</a>
         </div>
 
         <div class="nav-auth">

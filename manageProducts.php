@@ -13,7 +13,7 @@
          $description = $_POST['description'];
          $price = $_POST['price'];
          $image_url = $_POST['image_url'];
-         $id = uniqid();
+         $id = $name . rand(100, 999);
  
          $product = new Product($id, $name, $description, $price, $image_url);
          $productRepository = new ProductRepository();
@@ -72,6 +72,7 @@ table {
             <a href="adminHowitworks.php">How it Works</a>
             <a href="adminProducts.php">Products</a>
             <a href="adminAboutUs.php">About Us</a>
+            <a href="adminSuportUs.php">Support Us</a>
             <a href="dashboard.php">Dashboard</a>
         </div>
 

@@ -27,6 +27,19 @@ session_start();
         .hrOfUser{
             font:max(15px,1vw) "rRegular";
         }
+        .mngPrd-btn{
+            width: max(150px,10vw) !important;
+            height: max(35px,2.5vw);
+            background-color: #718FDD;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+        .mngPrd-btn a{
+            font: max(13px,0.6vw);
+            color: #ffffff;
+        }        
     </style>
 </head>
 <body>
@@ -40,6 +53,7 @@ session_start();
             <a href="adminHowitworks.php">How it Works</a>
             <a href="#">Products</a>
             <a href="adminAboutUs.php">About Us</a>
+            <a href="adminSuportUs.php">Support Us</a>
             <a href="dashboard.php">Dashboard</a>
         </div>
 
@@ -62,7 +76,9 @@ session_start();
             <div class="productsLine"></div>
         </div>
 
-        <a href="manageProducts.php" class="manage-products-btn">Manage Products</a>
+       <div class="mngPrd-btn">
+            <a href="manageProducts.php" class="manage-products-btn">Manage Products</a>
+       </div>
 
         <div class="productSubCards">
     <?php

@@ -22,12 +22,11 @@ session_start();
     <link rel="stylesheet" href="./CSS/footer.css">
 </head>
 <style>
-        .nav-auth {
+        .nav-auth{
             align-items: center;
         }
-
-        .hrOfUser {
-            font: max(15px, 1vw) "rRegular";
+        .hrOfUser{
+            font:max(15px,1vw) "rRegular";
         }
     </style>
 <body>
@@ -40,8 +39,8 @@ session_start();
             <a href="userHome.php">Home</a>
             <a href="userHowitworks.php">How it Works</a>
             <a href="userProducts.php">Products</a>
-            <a href="#">About Us</a>
-            <a href="userSuportUs.php">Support Us</a>
+            <a href="userAboutUs.php">About Us</a>
+            <a href="#">Support Us</a>
         </div>
 
         <div class="nav-auth">
@@ -60,17 +59,17 @@ session_start();
     <!-- ABOUT US COVER FILLON KETU -->
     <div class="aboutUsSub">
         <div class="aboutUs-sub-conatiner">
-            <h1>Welcome to metaverse where innovation meets virtual reality. We are dedicated to redefining
-                 the digital landscape by creating a dynamic metaverse that transcends boundaries,
-                  offering users a unique and immersive experience like never before.</h1>
+            <h1>Embrace the boundless possibilities of the metaverse with us,
+                 where community thrives and connections transcend dimensions.
+                  Join our expanding metaverse family today!</h1>
         </div>
     </div>
     <!-- ABOUT US COVER MBARON KETU -->
 
     <!-- OURMISSION FILLON KETU -->
 <div class="ourmission">
-    <h5>our mission</h5>
-    <h1>Giving people the power to build <br> community and bring the world closer together</h1>
+    <h5>come join the fun</h5>
+    <h1>Step into the Future <br>Join Our Metaverse Movement Today</h1>
     <div class="center-container">
     <img src="./assets/images/OurMission.jpg" alt="" width="550" height="300">
     </div>
@@ -80,11 +79,13 @@ session_start();
      <!-- SECONDTEXT QE I PERKET "OUR PRINCIPLES" FILLON KETU -->
 <div class="secondtext">
     <div class="secondtext-heading">
-    <h1>Our Principles</h1>
+    <h1>Unlock Your Digital Destiny</h1>
 </div>
 <div class="secondtext-down">
     <div class="secondtext-leftSide">
-        <p>They embody what we stand for and guide our approach to how we build technology for people and their relationships</p>
+        <p>Step into a realm where imagination knows no bounds and the digital landscape offers
+             infinite possibilities. Our metaverse community is a vibrant hub where individuals 
+             from all walks of life come together to explore, create, and connect.</p>
     </div>
 
     <div class="secondtext-rightSide">
@@ -100,7 +101,7 @@ session_start();
 <div class="leadership">
 
     <div class="leadershipUp">
-        <h1>Our leadership</h1>
+        <h1>Metaverse Mavericks Join the Revolution</h1>
     </div>
 
     <div class="leadershipDown">
@@ -111,8 +112,8 @@ session_start();
         </div>
     
         <div class="leadership-rightside">
-            <p>Meta’s leaders are guiding our company as the metaverse evolves,
-                 helping to create the next evolution of digital connection</p>
+            <p>As the metaverse unfolds, our leaders pave the way, shaping the future of digital connectivity.
+                 Join us in sculpting the next chapter of virtual evolution.</p>
         </div>
     </div>
     

@@ -51,6 +51,7 @@
             <a href="howitworks.php">How it Works</a>
             <a href="products.php">Products</a>
             <a href="aboutUs.php">About Us</a>
+            <a href="supportus.php">Support Us</a>
         </div>
 
         <div class="nav-auth">

@@ -65,6 +65,7 @@ if (!isset($_SESSION['name'])) {
             <a href="adminHowitworks.php">How it Works</a>
             <a href="adminProducts.php">Products</a>
             <a href="adminAboutUs.php">About Us</a>
+            <a href="adminSuportUs.php">Support Us</a>
             <a href="#">Dashboard</a>
         </div>
 
