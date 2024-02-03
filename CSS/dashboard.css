@@ -3,6 +3,16 @@
     padding: 0 ;
 }
 
+.button-edit,
+.button {
+    margin-right: 5px; /* Adjust the margin as needed */
+}
+
+.button-edit:last-child,
+.button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
 .leftSideDashboard{
     width: 20%;
     height: 100vh;

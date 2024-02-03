@@ -1,6 +1,4 @@
 <?php
-include "db_conn.php";
-include "databaseConnection.php";
 session_start();
 
 if (!isset($_SESSION['name'])) {
@@ -44,10 +42,10 @@ if (!isset($_SESSION['name'])) {
         </div>
 
         <div class="nav-links">
-            <a href="index.php">Home</a>
-            <a href="howitworks.php">How it Works</a>
-            <a href="products.php">Products</a>
-            <a href="aboutUs.php">About Us</a>
+            <a href="#">Home</a>
+            <a href="userHowitworks.php">How it Works</a>
+            <a href="userProducts.php">Products</a>
+            <a href="userAboutUs.php">About Us</a>
         </div>
 
         <div class="nav-auth">

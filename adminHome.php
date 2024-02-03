@@ -45,11 +45,11 @@ if (!isset($_SESSION['name'])) {
         </div>
 
         <div class="nav-links">
-            <a href="index.php">Home</a>
-            <a href="howitworks.php">How it Works</a>
-            <a href="products.php">Products</a>
-            <a href="aboutUs.php">About Us</a>
-            <a href="aboutUs.php">Dashboard</a>
+            <a href="#">Home</a>
+            <a href="adminHowitworks.php">How it Works</a>
+            <a href="adminProducts.php">Products</a>
+            <a href="adminAboutUs.php">About Us</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
 
         <div class="nav-auth">

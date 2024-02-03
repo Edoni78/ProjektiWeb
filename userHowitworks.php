@@ -1,9 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How it Works</title>
+    <title>Document</title>
     <script src="https://kit.fontawesome.com/a23437b52f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./CSS/navbar.css">
@@ -17,6 +20,14 @@
     <link rel="stylesheet" href="./CSS/footer.css">
     <link rel="stylesheet" href="./CSS/howitworksSub.css">
 </head>
+<style>
+        .nav-auth{
+            align-items: center;
+        }
+        .hrOfUser{
+            font:max(15px,1vw) "rRegular";
+        }
+    </style>
 <body>
     <div class="navbar">
         <div class="logoHolder">
@@ -24,15 +35,15 @@
         </div>
 
         <div class="nav-links">
-            <a href="index.php">Home</a>
-            <a href="howitworks.php">How it Works</a>
-            <a href="products.php">Products</a>
-            <a href="aboutUs.php">About Us</a>
+            <a href="userHome.php">Home</a>
+            <a href="#">How it Works</a>
+            <a href="userProducts.php">Products</a>
+            <a href="userAboutUs.php">About Us</a>
         </div>
 
         <div class="nav-auth">
-            <a class="signIn" href="login.php">Log In</a>
-            <a class="register" href="resgister.php"> Register</a>
+            <h3 class="hrOfUser"><?php echo "Username: ".$_SESSION['name']."<br>" ?></h3>
+            <a class="register <?php echo $hide?>" href="logout.php">Log out</a>
         </div>
 
 

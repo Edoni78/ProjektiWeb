@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +40,7 @@
             <a href="adminHowitworks.php">How it Works</a>
             <a href="#">Products</a>
             <a href="adminAboutUs.php">About Us</a>
+            <a href="dashboard.php">Dashboard</a>
         </div>
 
         <div class="nav-auth">
@@ -55,130 +56,53 @@
         </div>
 
     </div>
-
     <div class="productsSub">
         <div class="productSubHeader">
             <h1>Products</h1>
             <div class="productsLine"></div>
         </div>
 
+        <a href="manageProducts.php" class="manage-products-btn">Manage Products</a>
+
         <div class="productSubCards">
-            <div class="productSubCard">
-                <div class="productSubCard-up">
-                    <div class="product1"></div>
-                </div>
-                <div class="productSubCard-down">
-                    <div class="cardTitleS">
-                        <p>MetaGlasses</p>
-                    </div>
-                    <div class="cardDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, cumque!</p>
-                    </div>
-                    <div class="cardPrice">
-                        <p>13.99$</p>
-                        <div class="addToCart">
-                            <p class="plus">+</p>
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="productSubCard">
-                <div class="productSubCard-up">
-                    <div class="product2"></div>
-                </div>
-                <div class="productSubCard-down">
-                    <div class="cardTitleS">
-                        <p>MetaGlasses</p>
-                    </div>
-                    <div class="cardDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, cumque!</p>
-                    </div>
-                    <div class="cardPrice">
-                        <p>13.99$</p>
-                        <div class="addToCart">
-                            <p class="plus">+</p>
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="productSubCard">
-                <div class="productSubCard-up">
-                    <div class="product3"></div>
-                </div>
-                <div class="productSubCard-down">
-                    <div class="cardTitleS">
-                        <p>MetaGlasses</p>
-                    </div>
-                    <div class="cardDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, cumque!</p>
-                    </div>
-                    <div class="cardPrice">
-                        <p>13.99$</p>
-                        <div class="addToCart">
-                            <p class="plus">+</p>
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="productSubCard">
-                <div class="productSubCard-up">
-                    <div class="product4"></div>
-                </div>
-                <div class="productSubCard-down">
-                    <div class="cardTitleS">
-                        <p>MetaGlasses</p>
-                    </div>
-                    <div class="cardDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, cumque!</p>
-                    </div>
-                    <div class="cardPrice">
-                        <p>13.99$</p>
-                        <div class="addToCart">
-                            <p class="plus">+</p>
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="productSubCard">
-                <div class="productSubCard-up">
-                    <div class="product5"></div>
-                </div>
-                <div class="productSubCard-down">
-                    <div class="cardTitleS">
-                        <p>MetaGlasses</p>
-                    </div>
-                    <div class="cardDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, cumque!</p>
-                    </div>
-                    <div class="cardPrice">
-                        <p>13.99$</p>
-                        <div class="addToCart">
-                            <p class="plus">+</p>
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="productSubCard">
-                <div class="productSubCard-up">
-                    <div class="product6"></div>
-                </div>
-                <div class="productSubCard-down">
-                    <div class="cardTitleS">
-                        <p>MetaGlasses</p>
-                    </div>
-                    <div class="cardDescription">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, cumque!</p>
-                    </div>
-                    <div class="cardPrice">
-                        <p>13.99$</p>
-                        <div class="addToCart">
-                            <p class="plus">+</p>
-                            <i class="fa-solid fa-cart-shopping"></i>
+    <?php
+    include_once 'productRepository.php';
+
+    $productRepo = new ProductRepository();
+    $products = $productRepo->getAllProducts();
+
+    foreach ($products as $product) {
+        echo '<div class="productSubCard">';
+        echo '<form method="post" action="add_to_cart.php">';
+        echo '<input type="hidden" name="productId" value="' . $product['id'] . '">';
+
+        echo '<div class="productSubCard-up">';
+        echo '<div class="productImage" style="background-image: url(' . $product['image_url'] . ');"></div>';
+        echo '</div>';
+
+        echo '<div class="productSubCard-down">';
+        echo '<div class="cardTitleS">';
+        echo '<p>' . $product['name'] . '</p>';
+        echo '</div>';
+
+        echo '<div class="cardDescription">';
+        echo '<p>' . $product['description'] . '</p>';
+        echo '</div>';
+
+        echo '<div class="cardPrice">';
+        echo '<p>' . $product['price'] . '$</p>';
+
+        echo '<div class="addToCart">';
+        echo '<p class="plus">+</p>
+        <i class="fa-solid fa-cart-shopping"></i>';
+        echo '</div>';
+
+        echo '</div>';
+        echo '</div>';
+        echo '</form>';
+        echo '</div>';
+    }
+    ?>
                         </div>
                     </div>
                 </div>

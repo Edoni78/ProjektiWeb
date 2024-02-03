@@ -79,7 +79,8 @@
         echo '<p>' . $product['price'] . '$</p>';
 
         echo '<div class="addToCart">';
-        echo '<button type="submit">Add to Cart</button>';
+        echo '<p class="plus">+</p>
+        <i class="fa-solid fa-cart-shopping"></i>';
         echo '</div>';
 
         echo '</div>';

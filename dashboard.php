@@ -61,11 +61,11 @@ if (!isset($_SESSION['name'])) {
         </div>
 
         <div class="nav-links">
-            <a href="index.php">Home</a>
-            <a href="howitworks.php">How it Works</a>
-            <a href="products.php">Products</a>
-            <a href="aboutUs.php">About Us</a>
-            <a href="dashboard.php">Dashboard</a>
+            <a href="adminHome.php">Home</a>
+            <a href="adminHowitworks.php">How it Works</a>
+            <a href="adminProducts.php">Products</a>
+            <a href="adminAboutUs.php">About Us</a>
+            <a href="#">Dashboard</a>
         </div>
 
         <div class="nav-auth">
@@ -91,20 +91,39 @@ if (!isset($_SESSION['name'])) {
         <div class="rightSideDashboard">
         <table class="tableDashboard">
                 <tr>
-                    <th>Users</th>
-                    <th>Example</th>
-                    <th>Country</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                    <th>Action</th>
                 </tr>
+                <?php
+                
+             include_once 'userRepository.php';
+
+             $userRepository = new UserRepository();
+
+             $users = $userRepository->getAllUsers();
+
+             foreach($users as $user){
+                echo 
+                "
                 <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Example</td>
-                    <td>Germany</td>
+                     <td>$user[id]</td>
+                     <td>$user[name]</td>
+                     <td>$user[surname] </td>
+                     <td>$user[email] </td>
+                     <td>$user[password] </td>
+                     <td>$user[role] </td>
+                     <td><a href='edit.php?id=$user[id]'>Edit</a> </td>
+                     <td><a href='delete.php?id=$user[id]'>Delete</a></td>
+                     
                 </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Name</td>
-                    <td>Mexico</td>
-                </tr>
+                ";
+             }
+                ?>
                 </table>
         </div>
     </div>

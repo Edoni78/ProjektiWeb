@@ -51,22 +51,24 @@ class UserRepository {
         return $user;
     }
 
-    function updateUser($id,$name,$surname,$email,$password){
+    function updateUser($id, $name, $surname, $email, $password, $role){
         $conn = $this->connection;
-
-        $sql = "UPDATE accounts SET name=?, surname=?, email=?, username=?, password=? WHERE id=?";
-
-        $statement = $conn->prepare($sql);
-
-        $statement->execute([$name,$surname,$email,$password,$id]);
-
-        echo "<script>alert('update was successful'); </script>";
-   } 
+    
+        $sql = "UPDATE accounts SET name=?, surname=?, email=?, password=?, role=? WHERE id=?";
+    
+        try {
+            $statement = $conn->prepare($sql);
+            $statement->execute([$name, $surname, $email, $password, $role, $id]);
+            echo "<script>alert('Update was successful');</script>";
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
 
    function deleteUser($id){
     $conn = $this->connection;
 
-    $sql = "DELETE FROM user WHERE id=?";
+    $sql = "DELETE FROM accounts WHERE id=?";
 
     $statement = $conn->prepare($sql);
 

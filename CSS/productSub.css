@@ -17,6 +17,7 @@
     width: 20%;
     background-color: var(--mainColor);
 }
+
 .productSubCards{
     display: flex;
     justify-content: center;
