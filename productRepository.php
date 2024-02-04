@@ -33,7 +33,7 @@ class ProductRepository {
     function getAllProducts() {
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM products"; 
+        $sql = "SELECT * FROM  products"; 
 
         $statement = $conn->query($sql);
         $products = $statement->fetchAll(PDO::FETCH_ASSOC);

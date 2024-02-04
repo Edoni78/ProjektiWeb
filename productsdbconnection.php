@@ -4,7 +4,7 @@ class DatabaseConnection {
     private $server = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "metaverse.products";
+    private $database = "metaverse";
 
     public function startConnection() {
         try {
