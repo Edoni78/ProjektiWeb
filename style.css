@@ -28,3 +28,10 @@ a{
     font-family: "rRegular";
 }
 
+h1{
+   font-family: "rBold"; 
+}
+
+p{
+    line-height: 1.5;
+}
