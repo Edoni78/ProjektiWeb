@@ -1,0 +1,49 @@
+.dashboard{
+    margin-top: 100px;
+    padding: 0 ;
+}
+
+.button-edit,
+.button {
+    margin-right: 5px; /* Adjust the margin as needed */
+}
+
+.button-edit:last-child,
+.button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
+.leftSideDashboard{
+    width: 20%;
+    height: 100vh;
+    background-color: var( --mainColor);
+}
+.leftSideDashboard a, .leftSideDashboard p{
+    color: #ffffff;
+}
+.rightSideDashboard{
+    width: 80%;
+}
+.sidebar{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: max(10px,1vw);
+}
+.sidebar a:hover{
+    color: blue;
+}
+
+.sidebar a{
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dashboard{
+    display: flex;
+    /* gap: max(20px,2vw); */
+}
+
+.rightSideDashboard{
+    padding: 4% 0;
+}

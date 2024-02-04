@@ -1,0 +1,130 @@
+.footer{
+    padding: 4%;
+    background-color: #f3f3f3f3;
+    display: flex;
+    flex-direction: column;
+    gap: max(30px,2vw);
+}
+
+.footerLogo{
+    content: url("../assets/images/Meta\ logo.jpg");
+    width: 10%;
+}
+
+.footerUp{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    gap: max(20px,1.5vw);
+}
+.socialMedia{
+    display: flex;
+    justify-content: center;
+    gap: max(10px,0.6vw);
+}
+
+.socialMedia i{
+    font-size: max(20px,1vw);
+}
+.contact{
+    font-size: max(15px,0.8vw);
+}
+
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    gap: max(40px,1vw);
+    align-items: stretch;
+    flex-wrap: wrap;
+
+
+}
+
+.footerLink{
+    display: flex;
+    flex-direction: column;
+    gap: max(10px,0.6vw);
+    width: 18%;
+}
+
+.footerLink-title{
+    padding-bottom: 4%;
+}
+
+.footerLink a{
+    color: #000;
+}
+
+@media screen and (max-width:1150px) {
+    .footerLink{
+        width: 20%;
+    }
+    .footer-links{
+        justify-content: center !important;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .footerLink{
+        width: 25%;
+    }
+    
+    .footerLogo{
+        width: 20%;
+    }
+}
+
+
+@media screen and (max-width:760px) {
+    .footerLink{
+        width: 30%;
+        align-items: center;
+    }
+   
+    
+}
+
+@media screen and (max-width:570px) {
+    .footerLink{
+        width: 38%;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:490px) {
+    .footerLink{
+        width: 43%;
+        align-items: center;
+    }
+    .footerLogo{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .footerLink{
+        width: 50%;
+        align-items: center;
+    }
+   .footerUp{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+   }
+   .footer{
+    padding: 10% 4%;
+   }
+}
+
+@media screen and (max-width:400px) {
+    .footerLink{
+        width: 80%;
+        align-items: center;
+    }
+   
+}

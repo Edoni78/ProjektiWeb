@@ -1,0 +1,106 @@
+.productsSub{
+    padding: 4%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: max(20px,2vw);
+}
+.productSubHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: max(10px,0.6vw);
+}
+.productsLine{
+    height: 2px;
+    width: 20%;
+    background-color: var(--mainColor);
+}
+
+.productSubCards{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: max(20px,1.5vw);
+    flex-wrap: wrap;
+}
+.productSubCard{
+    width: 25%; 
+    /* height: 30vh; */
+    /* border: 1px solid red; */
+    border: 1px solid lightgray;
+    border-radius: max(10px,0.6vw);
+    display: flex;
+    flex-direction: column;
+    gap: max(10px,1vw);
+}
+.productSubCard-down{
+    display: flex;
+    flex-direction: column;
+    gap: max(10px,1vw);
+    padding: 4%;
+}
+.product1{
+    content: url("../assets/images/products/product1.webp");
+    width: 100%;
+    border-radius: max(10px,0.6vw) max(10px,0.6vw) 0 0 ;
+}
+.product2{
+    content: url("../assets/images/products/product2.jpg");
+    width: 100%;
+    border-radius: max(10px,0.6vw) max(10px,0.6vw) 0 0 ;
+}
+.product3{
+    content: url("../assets/images/products/product3.jpg");
+    width: 100%;
+    border-radius: max(10px,0.6vw) max(10px,0.6vw) 0 0 ;
+}
+.product4{
+    content: url("../assets/images/products/product4.jpeg");
+    width: 100%;
+    border-radius: max(10px,0.6vw) max(10px,0.6vw) 0 0 ;
+}
+.product5{
+    content: url("../assets/images/products/product5.png");
+    width: 100%;
+    border-radius: max(10px,0.6vw) max(10px,0.6vw) 0 0 ;
+}
+.product6{
+    content: url("../assets/images/products/product6.webp");
+    width: 100%;
+    border-radius: max(10px,0.6vw) max(10px,0.6vw) 0 0 ;
+}
+.productSubCard-up{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    /* border: 1px solid red; */
+    border-radius: max(10px,0.6vw) max(10px,0.6vw) 0 0 ;
+}
+
+.cardPrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addToCart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    width: max(40px,2.5vw);
+    height: max(30px,2vw);
+    background-color: black;
+    border-radius: max(5px,0.6vw);
+    cursor: pointer;
+}
+
+.addToCart i{
+    filter: invert(1);
+}
+.plus{
+    font-size: max(15px,1vw);
+    color: #ffffff;
+}

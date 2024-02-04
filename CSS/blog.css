@@ -1,0 +1,60 @@
+.blog{
+    padding: 4%;
+    display: flex;
+    gap: max(40px,3vw);
+    align-items: center;
+    flex-direction: column;
+}
+
+.blogImg{
+    content: url("../assets/images/Flexbox\ pic2.jpg");
+    width: 70%;
+}
+.blogUp h1{
+    font-size: max(30px,2.5vw);
+}
+.blogDown{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: max(20px,2vw);
+}
+
+.blog-leftside{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-rightside{
+    width: 50%;
+}
+
+.blog-rightside p{
+    font-family: "rRegular";
+    font-size: max(30px,2.5vw);
+}
+
+@media screen and (max-width:840px) {
+    .blogDown{
+        flex-direction: column-reverse;
+    }
+
+    .blog-rightside{
+        width: 100%;
+    }
+
+    .blog-leftside{
+        width: 100%;
+    }
+
+    .blog-rightside p{
+       text-align: center;
+    }
+
+    .blogImgHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
